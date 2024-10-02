@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",          
+      "dest": "app.py"       
+    }
+  ],
+  "env": {
+    "MY_ENV_VAR": "value",    
+    "SECRET_KEY": "f7aa61443b62c9e356d7585537cccba5cf2fe3fe9a965a45",
+    "JWT_SECRET_KEY": "9a455dc96b2f074b506c79cf0b51fb0746471e2805f375d9",
+    "DATABASE_URL": "postgresql+psycopg2://myuser:password@localhost:5432/shopease_db",
+    "STRIPE_SECRET_KEY": "sk_test_51Q0q6400WnorE2VjXLTg0ur25Fn5tRSllYVSQjjeN0AOIfzaHLOvdeh7rhrTHAzAtV1k9QKgdjv1QNl1j68YSOxk00bjyo7ZPW"
+  }
+}
