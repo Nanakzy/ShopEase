@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 from app.checkout import checkout_routes
 from config import Config
+from app.routes import main_routes
 
 # Load environment variables
 load_dotenv()
@@ -20,6 +21,7 @@ def create_app():
 
     # Register the blueprint
     app.register_blueprint(checkout_routes)
+    app.register_blueprint(main_routes)
 
     # Load configuration from environment variables
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'postgresql://myuser:password@localhost:5432/shopease_db')
