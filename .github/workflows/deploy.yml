@@ -1,0 +1,31 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - shopease
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        python -m venv backend/venv
+        source backend/venv/bin/activate
+        pip install -r backend/requirements.txt
+
+    - name: Run build
+      run: |
+        source backend/venv/bin/activate
+        python backend/app.py
+
