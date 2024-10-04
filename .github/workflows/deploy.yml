@@ -26,6 +26,8 @@ jobs:
 
     - name: Run Flask app
       run: |
-        source backend/venv/bin/activate
-        python backend/app.py
+        source backend/venv/bin/activatei
+        export FLASK_APP=backend/app.py
+        export FLASK_ENV=production
+        flask run
 
