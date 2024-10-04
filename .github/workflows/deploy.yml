@@ -24,7 +24,7 @@ jobs:
         source backend/venv/bin/activate
         pip install -r backend/requirements.txt
 
-    - name: Run build
+    - name: Run Flask app
       run: |
         source backend/venv/bin/activate
         python backend/app.py
