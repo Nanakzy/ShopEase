@@ -4,7 +4,7 @@ from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 import os
 from dotenv import load_dotenv
-from app.checkout import checkout_routes
+from app.routes.checkout import checkout_routes
 from config import Config
 from app.routes import main_routes
 
